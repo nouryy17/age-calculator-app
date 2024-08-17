@@ -1,29 +1,16 @@
-import {Age}from "./component/age"
+import { useState } from "react";
+import "./App.scss";
+
+import AgeCalculator from "./component/age";
+
 function App() {
- return(
-    <div className='calc'>
-         <div className='one'>
-            <span>
-               <label></label>
-               <input></input>
-            </span>
-            <span>
-               <label></label>
-               <input></input>
-            </span>
-            <span>
-               <label></label>
-               <input></input>
-            </span>
-         </div>
-         <div className='tow'>
-            <button></button>
-         </div>
-         <div className='three'>
-           <Age></Age>
-         </div>
+  return (
+    <div className="App">
+      <main>
+        <AgeCalculator />
+      </main>
     </div>
- )
+  );
 }
 
 export default App;

@@ -23,9 +23,26 @@
     @else if $size == big-desktop-up 
        @media (min-width: 1600px) 
         @content 
-@mixin transform($value) {
+@mixin transform($value) 
   -webkit-transform: $value
   -moz-transform: $value
   -o-transform: $value
   transform: $value
-}
+
+@function rem($pixels, $context: 16) 
+  @return (math.div($pixels, $context)) * 1rem
+
+
+// mobile first
+// 650px, 1024px, 1400px
+$breakpoints-up: 
+  "medium": "40.625em",
+  "large": "64em",
+  "xlarge": "87.5em",
+
+
+@mixin breakpoint($size) 
+  @media (min-width: map-get($breakpoints-up, $size)) 
+    @content;
+  
+

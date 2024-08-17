@@ -1,0 +1,161 @@
+@use "..,؟" as *
+
+
+.calculator__wrapper 
+  //   outline: 1px solid red
+
+  border-radius: inherit
+  padding-inline: 1em
+  padding-top: 1.5rem
+  padding-bottom: 3rem
+
+  form 
+    //   outline: 1px solid red
+    display: flex
+    gap: 1rem
+    padding-bottom: 2rem
+    position: relative
+
+    border-bottom: rem(1.5) solid hsl(var(--Neutral-300))
+
+    .label-input 
+      // outline: 1px solid red
+      display: inline-block
+      position: relative
+      padding-block: 2rem
+      padding-left: rem(5)
+      max-width: rem(150)
+
+      //   padding-left: 1rem
+
+      .input 
+        padding: 0.5em 0.8em
+        width: 100%
+        border-radius: 0.3rem
+        border: rem(1) solid hsl(var(--Neutral-300))
+
+        font-size: 1rem
+        font-size: clamp(1rem, 0.4rem + 2.56vw, 2rem)
+        &.active-error 
+          border-color: hsl(var(--Primary-200))
+          // animation: shake 0.5s
+        
+
+        @keyframes shake 
+          10%,
+          90% 
+            transform: translate3d(-1px, 0, 0)
+          
+
+          20%,
+          80% 
+            transform: translate3d(2px, 0, 0)
+          
+
+          30%,
+          50%,
+          70% 
+            transform: translate3d(-4px, 0, 0)
+          
+
+          40%,
+          60% 
+            transform: translate3d(4px, 0, 0)
+          
+        
+
+        &:focus 
+          outline: rem(2) solid hsl(var(--Primary-100))
+        
+
+        &:focus + .error1,
+        &:not(:placeholder-shown) + .error1 
+          top: 0.5rem
+          left: 0
+          //   transform: scale(0.8)
+          transform: translateY(0)
+        
+      
+
+      .error1 
+        position: absolute
+        top: rem(14)
+        left: 1rem
+        top: 50%
+        transform: translateY(-50%)
+        color: hsl(var(--Neutral-400))
+        text-transform: uppercase
+        letter-spacing: 0.2rem
+        font-weight: 800
+        font-size: 0.7rem
+        font-size: clamp(0.7rem, 0.512rem + 0.7692vw, 1rem)
+        max-width: max-content
+
+        transition: 250ms cubic-bezier(0.4, 0, 0.2, 1)
+
+        &.active-error 
+          color: hsl(var(--Primary-200))
+        
+      
+
+      .error2 
+        position: absolute
+        bottom: 0.8rem
+        left: 0
+        font-style: italic
+        color: hsl(var(--Primary-200))
+        text-transform: uppercase
+        // display: none
+        font-size: 0.6rem
+        font-size: clamp(0.6rem, 0.48rem + 0.51vw, 0.8rem)
+        min-width: max-content
+      
+    
+
+    .send-btn 
+      position: absolute
+      bottom: 0
+      left: 50%
+      transform: translate(-50%, 50%)
+      cursor: pointer
+
+      padding: 1em
+
+      border-radius: 50%
+      border: none
+      background-color: hsl(var(--Primary-100))
+
+      &:hover 
+        background-color: hsl(var(--Neutral-500))
+      
+
+      @include breakpoint(medium) 
+        right: rem(-35)
+        left: auto
+      
+
+      > img 
+        aspect-ratio: 1 /1
+        width: 1.5rem
+
+        @include breakpoint(medium) 
+          width: 2.5rem
+        
+      
+    
+  
+
+  .form__output 
+    padding-top: 3rem
+    font-size: var(--fs-100)
+
+    > p 
+      font-style: italic
+      font-weight: 800
+      font-size: 2rem
+      font-size: clamp(2rem, 1.1rem + 3.84vw, 3.5rem)
+      > span 
+        color: hsl(var(--Primary-100))
+      
+    
+  
