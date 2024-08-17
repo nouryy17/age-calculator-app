@@ -1,13 +1,11 @@
-import { useState } from "react";
-import "./App.scss";
-
-import AgeCalculator from "./component/age";
+import "./style/style.sass";
+import Age from "./component/age";
 
 function App() {
   return (
     <div className="App">
       <main>
-        <AgeCalculator />
+        <Age />
       </main>
     </div>
   );

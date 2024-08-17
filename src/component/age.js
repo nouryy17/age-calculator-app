@@ -1,15 +1,9 @@
-import React, { useState, useEffect, useCallback } from "react";
-
-import "../style/age.sass";
-
+import React, { useEffect, useCallback } from "react";
+import { useState } from "react";
 import sendArrowImg from "../assets/images/icon-arrow.svg";
 
-function ageCalculator() {
-  const [birthDetails, setBirthDetails] = useState({
-    day: "",
-    month: "",
-    year: "",
-  });
+function AgeCalculator() {
+  const [birthDetails, setBirthDetails] = useState({day:"",month:"",year:""});
 
   const [displayOutput, setDisplayOutput] = useState({
     day: "--",
@@ -36,20 +30,7 @@ function ageCalculator() {
     return errors;
   }
 
-  //   function handleInputs(e) {
-  //     const target = e.target;
-
-  //     const { name, value } = target;
-
-  //     if (isNaN(value)) return;
-
-  //     setDate((prevData) => {
-  //       return {
-  //         ...prevData,
-  //         [name]: value,
-  //       };
-  //     });
-  //   }
+  
 
   const handleInputs = useCallback((e) => {
     const target = e.target;
@@ -146,9 +127,7 @@ function ageCalculator() {
       }
     }
 
-    // console.log(`yearsOld ${yearsOld} `);
-    // console.log(`monthsOld ${monthssOld} `);
-    // console.log(`dayssOld ${daysOld} `);
+    
 
     setDisplayOutput({
       day: daysOld,
@@ -269,4 +248,4 @@ function ageCalculator() {
   );
 }
 
-export default ageCalculator;
+export default AgeCalculator;

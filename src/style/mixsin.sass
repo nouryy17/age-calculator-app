@@ -30,19 +30,13 @@
   transform: $value
 
 @function rem($pixels, $context: 16) 
-  @return (math.div($pixels, $context)) * 1rem
+  @return ($pixels/ $context) * 1rem
 
 
-// mobile first
-// 650px, 1024px, 1400px
-$breakpoints-up: 
-  "medium": "40.625em",
-  "large": "64em",
-  "xlarge": "87.5em",
-
+$breakpoints-up:("medium": "40.625em","large": "64em","xlarge": "87.5em")
 
 @mixin breakpoint($size) 
   @media (min-width: map-get($breakpoints-up, $size)) 
-    @content;
+    @content
   
 
