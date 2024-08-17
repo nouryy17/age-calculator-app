@@ -87,20 +87,6 @@ function AgeCalculator() {
     }
 
     leapYearChecker(recentYear, daysInMonths);
-    // if (integerBirthDay > recentDay) {
-    //   recentDay += daysInMonths[recentMonth - 1];
-    //   recentMonth -= 1;
-    // }
-
-    // if (integerBirthMonth > recentMonth) {
-    //   recentMonth += 12;
-    //   recentYear -= 1;
-    // }
-
-    // daysOld = recentDay - integerBirthDay;
-    // monthssOld = recentMonth - integerBirthMonth;
-    // yearsOld = recentYear - integerBirthYear;
-
     let yearsOld;
     let monthssOld;
     let daysOld;
@@ -235,7 +221,7 @@ function AgeCalculator() {
 
       <section className="form__output">
         <p className="years">
-          <span>{displayOutput.year}</span> years
+          <span >{displayOutput.year}</span> years
         </p>
         <p className="months">
           <span>{displayOutput.month}</span> months

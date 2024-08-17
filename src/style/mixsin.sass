@@ -23,11 +23,11 @@
     @else if $size == big-desktop-up 
        @media (min-width: 1600px) 
         @content 
-@mixin transform($value) 
-  -webkit-transform: $value
-  -moz-transform: $value
-  -o-transform: $value
-  transform: $value
+@mixin transform($prop,$value) 
+  -webkit-prop: $value
+  -moz-prop: $value
+  -o-prop: $value
+  $prop: $value
 
 @function rem($pixels, $context: 16) 
   @return ($pixels/ $context) * 1rem
